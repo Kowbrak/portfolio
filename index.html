@@ -10,14 +10,26 @@
 </head>
 
 <body>
+  <div data-include-html="_header.html"></div>
   <div class="container mt-4">
     <p>Je suis [Votre Nom], étudiant en BUT Informatique. Voici mon portfolio qui présente mon stage et mes compétences.
     </p>
     <input type="button" value="salut" class="btn btn-primary">
   </div>
+  <div data-include-html="_footer.html"></div>
   <script src="bootstrap.bundle.min.js"></script>
   <script src="jquery-3.7.1.min.js"></script>
   <script src="methodes.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('[data-include-html]').each(function () {
+        var file = $(this).data('include-html');
+        if (file) {
+          $(this).load(file);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
