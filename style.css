@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .w-45 {
     width: 45%;
 }
@@ -18,4 +22,23 @@
 
 .home {
     min-height: 100vh;
+}
+
+h5.pChange p,
+h5.pChange li {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+h5.pChange p:hover {
+    transform: scale(1.05);
+}
+
+h5.pChange li:hover {
+    transform: scale(1.05);
+    list-style-type: none;
+}
+
+h5.pChange:hover p:not(:hover),
+h5.pChange:hover li:not(:hover) {
+    opacity: 0.5;
 }

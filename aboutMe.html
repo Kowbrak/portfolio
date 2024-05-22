@@ -13,17 +13,23 @@
     <div data-include-html="_header.html"></div>
     <div class="container mt-4">
         <h1>Qui suis-je ?</h1><br>
-        <div class="container">
-            <h5>
-                <p>Bonjour, je m'appelle Manuel Leitao et j'ai 20 ans.</p><br>
+        <div class="container animate">
+            <h5 class="pChange d-flex flex-column">
+                <p class="d-flex">Bonjour, je m'appelle Manuel Leitao et j'ai 20 ans.</p><br>
                 <p>Je suis étudiant en BUT Informatique à l'IUT Nord Franche-Comté à Belfort, parcours réalisation
-                    d'applications :
+                    d'applications :</p>
                 <ul>
-                    <li>Conception</li>
-                    <li>Développement</li>
-                    <li>Validation</li>
+                    <li>
+                        <p class="m-0 p-0">Conception</p>
+                    </li>
+                    <li>
+                        <p class="m-0 p-0">Développement</p>
+                    </li>
+                    <li>
+                        <p class="m-0 p-0">Validation</p>
+                    </li>
                 </ul>
-                </p><br>
+                <br>
                 <p>Je suis très intéressé par le développement d'applications et d'applications web. Je suis
                     actuellement en train de me former dans ce domaine à l'IUT Nord Franche-Comté à Belfort.</p>
                 <br>
@@ -45,6 +51,7 @@
                     d'une
                     équipe de développement qui fait des application internes en PHP, Symfony et js.</p>
             </h5>
+
         </div>
     </div>
     <div data-include-html="_footer.html"></div>
@@ -53,6 +60,7 @@
     <script src="methodes.js"></script>
     <script>
         $(document).ready(function () {
+            // Charger les fichiers HTML inclus
             $('[data-include-html]').each(function () {
                 var file = $(this).data('include-html');
                 if (file) {
