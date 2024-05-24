@@ -12,8 +12,88 @@
 <body>
     <div data-include-html="_header.html"></div>
     <div class="container mt-4">
-
-
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">Information</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button"
+                    role="tab" aria-controls="All" aria-selected="false">Tout</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill1-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">Compétences 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill2-tab" data-bs-toggle="tab" data-bs-target="#skill2" type="button"
+                    role="tab" aria-controls="skill2" aria-selected="false">Compétences 2</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill3-tab" data-bs-toggle="tab" data-bs-target="#skill3" type="button"
+                    role="tab" aria-controls="skill3" aria-selected="false">Compétences 3</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill4-tab" data-bs-toggle="tab" data-bs-target="#skill4" type="button"
+                    role="tab" aria-controls="skill4" aria-selected="false">Compétences 4</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill5-tab" data-bs-toggle="tab" data-bs-target="#skill5" type="button"
+                    role="tab" aria-controls="skill5" aria-selected="false">Compétences 5</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="skill6-tab" data-bs-toggle="tab" data-bs-target="#skill6" type="button"
+                    role="tab" aria-controls="skill6" aria-selected="false">Compétences 6</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="d-flex justify-content-between mt-4">
+                    <div id="presStageVeto" class="max-w-48">
+                        <h4>Présentation du stage.</h4>
+                        <p>Durant ce stage, j'ai été assigné à la refonte d'une application web nommée Weasel. Weasel
+                            est une application qui sert de stockage de documents associés à des métadonnées, générés
+                            par un ERP (JDE). Elle est utilisée par des utilisateurs internes pour accéder rapidement à
+                            ces documents. C'est une application qui a été développée en PHP/Symfony2 en 2013. <br>Comme
+                            cette application vieillissait, il était nécessaire de faire un travail complet de refonte.
+                            À savoir :
+                        <ul>
+                            <li>Rétro-ingénierie de l'application actuelle.</li>
+                            <li>Rédaction, présentation et validation d'un cahier des charges, qui était absent lors de
+                                la création de l'application.</li>
+                            <li>Développement de l'application complète (front-end, back-end et base de données) en
+                                Symfony 6.4-LTS.</li>
+                            <li>Refonte totale de l'intégration qui était réalisée par le logiciel Talend. Désormais,
+                                l'intégration des données est gérée par un script PHP.</li>
+                            <li>Validation et migration vers la production.</li>
+                        </ul>
+                        <p>Le plus grand défi durant ce stage (sans compter l'apprentissage du langage et du framework)
+                            était de faire en sorte que l'application réponde beaucoup plus vite. L'ancienne version
+                            pouvait prendre 1 à 2 minutes pour répondre, mais j'ai trouvé des solutions pour pallier ce
+                            problème. Maintenant, le temps de réponse est de maximum 6 à 7 secondes.</p>
+                        <p>Tuteur en entreprise : Nicolas BREGIER</p>
+                        <p>Tuteur pédagogique : Gilles Perrot</p>
+                        <p>Date : du 8 avril 2024 au 28 juin 2024 (12 semaines)</p>
+                        </p>
+                    </div>
+                    <div id="vetoquinolStage" class="max-w-48 text-end">
+                        <h4>Entreprise : Vetoquinol</h4>
+                        <img src="imageVeto.png" alt="imageVeto" class="w-50">
+                        <p>Vetoquinol est un laboratoire pharmaceutique vétérinaire, destiné aux animaux de production
+                            et de compagnie. Créé en 1933 par Joseph Frechin, l'entreprise comptait près de 2 500
+                            employés à travers le monde en 2023 et a réalisé un chiffre d'affaires de 529 millions
+                            d'euros en 2023. L'entreprise possède plusieurs sites dans le monde.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Tout</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Compétences 1</div>
+            <div class="tab-pane fade" id="skill2" role="tabpanel" aria-labelledby="skill2-tab">Compétences 2</div>
+            <div class="tab-pane fade" id="skill3" role="tabpanel" aria-labelledby="skill3-tab">Compétences 3</div>
+            <div class="tab-pane fade" id="skill4" role="tabpanel" aria-labelledby="skill4-tab">Compétences 4</div>
+            <div class="tab-pane fade" id="skill5" role="tabpanel" aria-labelledby="skill5-tab">Compétences 5</div>
+            <div class="tab-pane fade" id="skill6" role="tabpanel" aria-labelledby="skill6-tab">Compétences 6</div>
+        </div>
     </div>
     <div data-include-html="_footer.html"></div>
     <script src="bootstrap.bundle.min.js"></script>

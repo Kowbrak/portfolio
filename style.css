@@ -42,3 +42,7 @@ h5.pChange:hover p:not(:hover),
 h5.pChange:hover li:not(:hover) {
     opacity: 0.5;
 }
+
+.max-w-48 {
+    max-width: 48%;
+}
