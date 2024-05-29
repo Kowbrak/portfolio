@@ -46,3 +46,42 @@ h5.pChange:hover li:not(:hover) {
 .max-w-48 {
     max-width: 48%;
 }
+
+/* Ajoutez ceci à votre fichier style.css ou à l'intérieur d'une balise <style> dans votre HTML */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.appear-from-left {
+    opacity: 0;
+    animation: slideInFromLeft 1s forwards;
+}
+
+.appear-from-right {
+    opacity: 0;
+    animation: slideInFromRight 1s forwards;
+}
+
+.hidden {
+    visibility: hidden;
+}
