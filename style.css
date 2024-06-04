@@ -94,6 +94,29 @@ h5.pChange:hover li:not(:hover) {
     }
 }
 
+@keyframes appear {
+    0% {
+        scale: 0;
+        opacity: 0;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes appear2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* */
 .appear-from-left {
     opacity: 0;
     animation: slideInFromLeft 1s forwards;
@@ -116,6 +139,16 @@ h5.pChange:hover li:not(:hover) {
 .appear-from-right-wait-1 {
     opacity: 0;
     animation: slideInFromRight 1s forwards 1s;
+}
+
+.appear-from-wait-1 {
+    opacity: 0;
+    animation: appear2 1s forwards 1s;
+}
+
+.appear-from-nothing-wait-1 {
+    opacity: 0;
+    animation: appear 1s forwards 1s;
 }
 
 .justified-text {

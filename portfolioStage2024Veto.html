@@ -331,7 +331,8 @@
                         <h5 class="text-center">Vérifier et valider la qualité de l'application par les
                             tests.</h5>
                         <div class="d-flex flex-column mt-4 text-center">
-                            <p>Pour cette application, nous aurons plusieurs tests :</p>
+                            <p class="appear-from-right-wait-1">Pour cette application, nous aurons plusieurs tests :
+                            </p>
                             <div class="m-100">
                                 <div class="accordion" id="accordionPanelsStayOpenExample">
                                     <div class="accordion-item appear-from-left-wait-1">
@@ -429,7 +430,137 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="skill2" role="tabpanel" aria-labelledby="skill2-tab">Compétences 2, 3 et 4
+            <div class="tab-pane fade" id="skill2" role="tabpanel" aria-labelledby="skill2-tab">
+                <div class="mt-5 container appear-from-left hidden">
+                    <h5 class="text-center">Organiser la restitution de données à travers la programmation et la
+                        Visualisation</h5>
+                    <div>
+                        <p class="appear-from-nothing-wait-1">L'application que j'ai développée permet à l'utilisateur
+                            de rechercher des documents et de les récupérer soit en les téléchargeant, soit en les
+                            envoyant par mail à un tiers. Dans cet article, je vais me concentrer sur trois tables de la
+                            base de données que j'ai utilisées : "Document", "AssociatedDocument" et "Propertie".</p>
+                        <div class="d-flex container flex-column appear-from-nothing-wait-1">
+                            <div class="row">
+                                <div class="col-4 appear-from-left-wait-1">La table "Document" contient tous les
+                                    documents que j'ai intégrés dans la base de données.</div>
+                                <div class="col-4 appear-from-wait-1">La table "AssociatedDocument" contient des
+                                    documents associés à des documents de la table "Document". Par exemple, cela peut
+                                    être un document supplémentaire lors d'une livraison.</div>
+                                <div class="col-4 appear-from-right-wait-1">la table "Propertie" contient les
+                                    métadonnées des documents pour faciliter leur recherche.</div>
+                            </div>
+                            <div class="row mt-3">
+                                <img src="port1Comp2_1.png" alt="port1Comp2_1.png"
+                                    class="col-4 appear-from-left-wait-1">
+                                <img src="port1Comp2_2.png" alt="port1Comp2_2.png" class="col-4 appear-from-wait-1">
+                                <img src="port1Comp2_3.png" alt="port1Comp2_3.png"
+                                    class="col-4 appear-from-right-wait-1">
+                            </div>
+                        </div>
+                        <p class="appear-from-nothing-wait-1 mt-4">J'ai conservé ces tables du précédent MCD car je
+                            devais
+                            créer la même application que mon prédécesseur, sans modifier le MCD ni le flux (pour plus
+                            de détail "fin"). Les filtres
+                            de recherche sont basés sur les propriétés et chaque ligne du tableau correspond à un
+                            document. Chaque colonne correspond à une métadonnée liée au type de document, avec ses
+                            valeurs dans les cases. Il est également indiqué si un document associé est disponible ou
+                            non.</p>
+                        <img src="port1Comp2_4.png" alt="port1Comp2_4.png" class="w-100 appear-from-nothing-wait-1">
+                        <div class="d-flex mt-4 justify-content-between">
+                            <p class="appear-from-nothing-wait-1 w-48 justified-text align-content-center px-5">Il est
+                                possible d'accéder au PDF
+                                d'un
+                                document en
+                                cliquant sur le bouton "Open". Le PDF est alors recherché dans l'arborescence, que j'ai
+                                organisée de la manière suivante : /pays/type_document/annee/classement/. Cette
+                                organisation
+                                facilite la recherche de documents. Les valeurs de l'arborescence sont directement
+                                enregistrées dans la table "Document".</p>
+                            <img src="port1Comp2_5.png" alt="port1Comp2_5"
+                                class="w-48 align-content-center appear-from-nothing-wait-1">
+                        </div>
+                        <div class="d-flex mt-4 justify-content-between">
+                            <img src="port1Comp2_6.png" alt="port1Comp2_6"
+                                class="w-48 align-content-center appear-from-nothing-wait-1">
+                            <p class="appear-from-nothing-wait-1 w-48 justified-text align-content-center px-5">Pour
+                                l'intégration de nouveaux documents dans la base de données, je dispose d'un dossier
+                                contenant des sous-dossiers correspondant à chaque exécution du flux. Dans ces
+                                sous-dossiers, je trouve les documents à ajouter dans l'ERP, avec leur fichier PDF et
+                                leur fichier texte contenant les métadonnées.</p>
+                        </div>
+                        <div class="d-flex mt-4 flex-column">
+                            <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5">Lors de
+                                l'exécution du script d'intégration que j'ai créé en PHP, je vérifie si un nouveau
+                                sous-dossier a été ajouté. Si c'est le cas, je récupère dans un tableau chaque document
+                                avec son fichier PDF et son fichier texte. Je vérifie ensuite que les cinq valeurs
+                                obligatoires soient bien renseignées. Si la valeur "magasin" n'est pas renseignée, je la
+                                crée. Si une autre valeur obligatoire manque, je transfère le fichier PDF et le fichier
+                                texte dans un dossier différent qui regroupe tous les documents incomplets, et j'ajoute
+                                une ligne dans les logs d'intégration pour indiquer le problème rencontré.</p>
+                            <div id="carouselExampleDark4"
+                                class="carousel carousel-dark slide appear-from-nothing-wait-1">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleDark4" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark4" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark4" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark4" data-bs-slide-to="3"
+                                        aria-label="Slide 4"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="port1Comp2_7.png" class="d-block mx-15 w-70" alt="port1Comp2_7">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="port1Comp2_8.png" class="d-block mx-15 w-70" alt="port1Comp2_8">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="port1Comp2_9.png" class="d-block mx-15 w-70" alt="port1Comp2_9">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="port1Comp2_10.png" class="d-block mx-15 w-70" alt="port1Comp2_10">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleDark4" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleDark4" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-4 justify-content-between">
+                            <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5">Si
+                                toutes les valeurs obligatoires sont présentes, j'enregistre le fichier PDF à son
+                                emplacement définitif dans l'arborescence, et j'ajoute le document et ses propriétés
+                                dans la base de données. Je vérifie également si le document possède un document
+                                associé, pour l'ajouter à son tour dans la base de données.</p>
+                        </div>
+                        <div class="d-flex mt-4 justify-content-between">
+                            <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5">
+                                Auparavant, l'intégration était effectuée par un flux Talend géré par l'équipe
+                                d'intégration. Cependant, mon responsable souhaite réduire notre dépendance à Talend.
+                                J'ai donc créé mon propre script d'intégration et l'équipe d'intégration me fournit les
+                                documents à intégrer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 container appear-from-right hidden">
+                    <h5 class="text-center">Comprendre les enjeux et moyens de sécurisation des données et du
+                        Code</h5>
+                </div>
+                <div class="mt-5 container appear-from-left hidden">
+                    <h5 class="text-center">Assurer la confidentialité des données (intégrité et sécurité)</h5>
+                </div>
+                <div class="mt-5 container appear-from-right hidden">
+                    <h5 class="text-center">Optimiser les modèles de données de l’entreprise</h5>
+                </div>
             </div>
             <div class="tab-pane fade" id="skill5" role="tabpanel" aria-labelledby="skill5-tab">Compétences 5 et 6</div>
         </div>
