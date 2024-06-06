@@ -19,10 +19,6 @@
                     role="tab" aria-controls="home" aria-selected="true">Information</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button"
-                    role="tab" aria-controls="All" aria-selected="false">Tout</button>
-            </li>
-            <li class="nav-item" role="presentation">
                 <button class="nav-link" id="skill1-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
                     role="tab" aria-controls="profile" aria-selected="false">Compétences 1</button>
             </li>
@@ -34,6 +30,9 @@
                 <button class="nav-link" id="skill5-tab" data-bs-toggle="tab" data-bs-target="#skill5" type="button"
                     role="tab" aria-controls="skill5" aria-selected="false">Compétences 5 et 6</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button"
+                    role="tab" aria-controls="All" aria-selected="false">Annexe</button>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -82,7 +81,7 @@
 
                 </div>
             </div>
-            <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Tout</div>
+
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="container d-flex flex-column">
                     <div class="mt-4 container appear-from-left hidden">
@@ -554,9 +553,66 @@
                 <div class="mt-5 container appear-from-right hidden">
                     <h5 class="text-center">Comprendre les enjeux et moyens de sécurisation des données et du
                         Code</h5>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5">
+                            En termes de sécurisation des données sur les serveurs, nous avons des serveurs de
+                            développement, de validation et de production. Il y a des sauvegardes du code source, de la
+                            base de données et des données associées à l'application. De plus, une sauvegarde système
+                            est effectuée tous les jours. En fin de semaine, les sauvegardes sont mises sur des bandes
+                            et conservées pendant 30 jours. Ensuite, le contenu des bandes peut être écrasé pour
+                            recommencer le cycle.</p>
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5 w-48">
+                            Pour accéder aux données et aux applications de l'entreprise, dont Weasel, il faut un
+                            ordinateur Vetoquinol et une authentification via SSO, ce qui permet de sécuriser l'accès
+                            aux données. Même avec un PC Vetoquinol et une authentification réussie, il faut être
+                            connecté soit au réseau Wi-Fi de l'entreprise, soit via Ethernet. Ces deux options sont
+                            uniquement disponibles sur site. Pour accéder aux applications et aux données depuis
+                            l'extérieur, il est nécessaire de se connecter au VPN.</p>
+                        <img src="port1Comp2_14.png" alt="port1Comp2_14" class="w-48 appear-from-nothing-wait-1">
+                    </div>
+                    <div class="d-flex mt-4 justify-content-between">
+                        <p class="appear-from-nothing-wait-1 justified-text align-content-center px-5">
+                            Les enjeux sont principalement commerciaux, car Vetoquinol n'est pas une entreprise
+                            informatique mais un laboratoire pharmaceutique. Ainsi, si des projets informatiques sont
+                            créés, c'est pour répondre à un besoin de l'entreprise. Le besoin pour Weasel est
+                            principalement lié à l'archivage.</p>
+                    </div>
                 </div>
                 <div class="mt-5 container appear-from-left hidden">
                     <h5 class="text-center">Assurer la confidentialité des données (intégrité et sécurité)</h5>
+                    <div class="container mt-4">
+                        <div
+                            class="w-50 align-content-center justified-text me-50p text-center appear-from-nothing-wait-1">
+                            Dans l'ancienne application, si quelqu'un avait le lien du fichier, il pouvait y accéder
+                            sans vérification de droits.
+                            Pour augmenter la sécurité des données, j'ai donc mis en place une vérification des
+                            droits de l'utilisateur avant l'affichage du PDF. Si les droits de la personne ne sont
+                            pas valides par rapport à ceux requis pour le document, l'utilisateur est redirigé vers
+                            une page d'erreur.</div>
+                        <div
+                            class="w-50 mt-4 align-content-center justified-text me-37_5p ms-12_5p text-center appear-from-nothing-wait-1">
+                            Pour vérifier les droits, nous commençons par vérifier si l'utilisateur est un ADMIN ou un
+                            USER. Si c'est un ADMIN, il a directement accès au document sans vérification
+                            supplémentaire. Si c'est un USER, nous vérifions qu'il a bien accès à ce type de document et
+                            à ce pays. Ensuite, je vérifie s'il a accès au bon magasin et au bon département. Si aucune
+                            restriction n'est spécifiée dans la base de données (BDD), il a accès à tout. Cependant, si
+                            des droits spécifiques sont définis pour le magasin et le département dans la BDD,
+                            l'utilisateur n'aura accès qu'à ce qui est spécifié.</div>
+                        <div
+                            class="w-50 mt-4 align-content-center justified-text ms-37_5p me-12_5p text-center appear-from-nothing-wait-1">
+                            Pour assurer la confidentialité des données, il y a la connexion via SSO grâce à un bundle
+                            Symfony créé par mon tuteur. Ce bundle utilise la session de l'ordinateur pour identifier
+                            qui essaie de se connecter à l'application et vérifier s'il a accès..</div>
+                        <div
+                            class="w-50 mt-4 align-content-center justified-text ms-50p text-center appear-from-nothing-wait-1">
+                            Pour garantir l'intégrité des données, j'ai revu le code pour empêcher les injections SQL.
+                            De plus, l'application n'est pas conçue pour modifier le contenu de la base de données, mais
+                            uniquement pour afficher des documents. Ainsi, il y a peu de risques de modification de la
+                            BDD, sauf pour les administrateurs dans les CRUD. Même dans ce cas, les documents ne peuvent
+                            pas être altérés sans un accès direct au serveur web</div>
+                    </div>
                 </div>
                 <div class="mt-5 container appear-from-right hidden">
                     <h5 class="text-center">Optimiser les modèles de données de l’entreprise</h5>
@@ -594,6 +650,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="skill5" role="tabpanel" aria-labelledby="skill5-tab">Compétences 5 et 6</div>
+            <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Annexe</div>
         </div>
     </div>
     <div data-include-html="_footer.html"></div>
@@ -601,17 +658,6 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="methodes.js"></script>
     <script>
-        $(document).ready(function () {
-            $('[data-include-html]').each(function () {
-                var file = $(this).data('include-html');
-                if (file) {
-                    $(this).load(file);
-                }
-            });
-        });
-    </script>
-    <script>
-        // Fonction pour vérifier si un élément est dans la vue
         function isElementInViewport(el) {
             var rect = el.getBoundingClientRect();
             return (
@@ -622,7 +668,6 @@
             );
         }
 
-        // Fonction pour ajouter l'animation aux éléments en vue
         function handleScroll() {
             var elementsLeft = document.querySelectorAll('.appear-from-left');
             var elementsRight = document.querySelectorAll('.appear-from-right');
@@ -642,12 +687,21 @@
             });
         }
 
-        // Écoutez l'événement de défilement
         window.addEventListener('scroll', handleScroll);
 
-        // Vérifiez les éléments au chargement de la page
         window.addEventListener('load', handleScroll);
     </script>
+    <script>
+        $(document).ready(function () {
+            $('[data-include-html]').each(function () {
+                var file = $(this).data('include-html');
+                if (file) {
+                    $(this).load(file);
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

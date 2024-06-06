@@ -154,3 +154,27 @@ h5.pChange:hover li:not(:hover) {
 .justified-text {
     text-align: justify;
 }
+
+.ms-50p {
+    margin-left: 50%;
+}
+
+.me-50p {
+    margin-right: 50%;
+}
+
+.me-37_5p {
+    margin-right: 37.5%;
+}
+
+.ms-37_5p {
+    margin-left: 37.5%;
+}
+
+.ms-12_5p {
+    margin-left: 12.5%;
+}
+
+.me-12_5p {
+    margin-right: 12.5%;
+}
