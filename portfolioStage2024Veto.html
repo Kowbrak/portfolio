@@ -808,6 +808,16 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script src="methodes.js"></script>
     <script>
+        $(document).ready(function () {
+            $('[data-include-html]').each(function () {
+                var file = $(this).data('include-html');
+                if (file) {
+                    $(this).load(file);
+                }
+            });
+        });
+    </script>
+    <script>
         function isElementInViewport(el) {
             var rect = el.getBoundingClientRect();
             return (
