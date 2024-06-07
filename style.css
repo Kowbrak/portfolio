@@ -151,6 +151,11 @@ h5.pChange:hover li:not(:hover) {
     animation: appear 1s forwards 1s;
 }
 
+.appear-from-nothing {
+    opacity: 0;
+    animation: appear 1s forwards;
+}
+
 .justified-text {
     text-align: justify;
 }
@@ -177,4 +182,12 @@ h5.pChange:hover li:not(:hover) {
 
 .me-12_5p {
     margin-right: 12.5%;
+}
+
+.me-25p {
+    margin-right: 25%;
+}
+
+.ms-25p {
+    margin-left: 25%;
 }
