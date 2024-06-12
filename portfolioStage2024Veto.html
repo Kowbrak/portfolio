@@ -11,7 +11,29 @@
 </head>
 
 <body>
-    <div data-include-html="_header.html"></div>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolios de Manuel LEITAO</a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Menu
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutMe.html">Qui suis-je ?</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="portfolioStage2024Veto.html">Stage Vetoquinol 2024</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div data-include-html="_header.html"></div> -->
     <div class="container mt-4">
         <ul class="nav nav-tabs justify-content-around" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -803,7 +825,13 @@
             <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Annexe</div>
         </div>
     </div>
-    <div data-include-html="_footer.html"></div>
+    <!-- <div data-include-html="_footer.html"></div> -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <p>&copy; 2024 Mon Site Web</p>
+        </div>
+    </footer>
+    <!-- ttttttttttttttttttttttttttttttttttttttt -->
     <script src="bootstrap.bundle.min.js"></script>
     <script src="jquery-3.7.1.min.js"></script>
     <script src="methodes.js"></script>
