@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Portfolios - Weasel</title>
 </head>
 
@@ -52,10 +52,10 @@
                 <button class="nav-link" id="skill5-tab" data-bs-toggle="tab" data-bs-target="#skill5" type="button"
                     role="tab" aria-controls="skill5" aria-selected="false">Compétences 5 et 6</button>
             </li>
-            <li class="nav-item" role="presentation">
+            <!-- <li class="nav-item" role="presentation">
                 <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button"
                     role="tab" aria-controls="All" aria-selected="false">Annexe</button>
-            </li>
+            </li> -->
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -480,8 +480,8 @@
                         </div>
                         <p class="appear-from-nothing-wait-1 mt-4">J'ai conservé ces tables du précédent MCD car je
                             devais
-                            créer la même application que mon prédécesseur, sans modifier le MCD ni le flux (pour plus
-                            de détail "fin"). Les filtres
+                            créer la même application que mon prédécesseur, sans modifier le MCD ni le flux (<a
+                                href="#itemFin">pour plus de détail</a>). Les filtres
                             de recherche sont basés sur les propriétés et chaque ligne du tableau correspond à un
                             document. Chaque colonne correspond à une métadonnée liée au type de document, avec ses
                             valeurs dans les cases. Il est également indiqué si un document associé est disponible ou
@@ -636,7 +636,7 @@
                             pas être altérés sans un accès direct au serveur web</div>
                     </div>
                 </div>
-                <div class="mt-5 container appear-from-right hidden">
+                <div class="mt-5 container appear-from-right hidden" id="itemFin">
                     <h5 class="text-center">Optimiser les modèles de données de l’entreprise</h5>
                     <div class="container">
                         <div class="d-flex mt-4 justify-content-between flex-column">
@@ -822,13 +822,46 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Annexe</div>
+            <!-- <div class="tab-pane fade" id="all" role="tabpanel" aria-labelledby="all-tab">Annexe</div> -->
         </div>
     </div>
     <!-- <div data-include-html="_footer.html"></div> -->
     <footer class="bg-light text-center text-lg-start mt-4">
         <div class="container p-4">
-            <p>&copy; 2024 Mon Site Web</p>
+            <section class="mb-4">
+                <a class="btn btn-primary btn-floating m-1" style="background-color: #0077b5;"
+                    href="https://www.linkedin.com/in/manuel-leitao-6756a5278/" target="_blank" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="btn btn-dark btn-floating m-1" style="background-color: #333333;"
+                    href="https://github.com/mleitao2-iut90" target="_blank" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+            <section class="mb-4">
+                <p>
+                    Merci de visiter mon portfolio. Pour toute question ou collaboration, n'hésitez pas à me contacter
+                    via les réseaux sociaux ci-dessus.
+                </p>
+            </section>
+            <section class="">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Contact</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <p><i class="fas fa-home mr-3"></i> Belfort, France</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-envelope mr-3"></i> manuel.leitao04@gmail.com</p>
+                            </li>
+                            <li>
+                                <p><i class="fas fa-phone mr-3"></i> +33 7 83 53 11 92</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
     </footer>
     <!-- ttttttttttttttttttttttttttttttttttttttt -->
