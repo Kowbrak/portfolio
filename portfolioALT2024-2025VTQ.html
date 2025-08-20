@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Alternance 2024-2025 - Manuel LEITAO</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <style>
+        .badge-trace {
+            background: #0d6efd;
+        }
+
+        .badge-illustration {
+            background: #20c997;
+        }
+
+        .label-ac {
+            background: #6c757d;
+        }
+
+        .toc a {
+            text-decoration: none;
+        }
+
+        .zigzag>.row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .card-portfolio .card-header {
+            font-weight: 600;
+        }
+
+        .legend-swatch {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .swatch-trace {
+            background: #0d6efd;
+        }
+
+        .swatch-illustration {
+            background: #20c997;
+        }
+
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1030;
+        }
+
+        .toc {
+            position: sticky;
+            top: 6rem;
+        }
+
+        .justified-text {
+            text-align: justify;
+        }
+
+        /* Termes cliquables (glossaire) */
+        .term {
+            text-decoration: underline dotted;
+            cursor: help;
+        }
+
+        /* Galerie d'images pour Traces/Illustrations */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .gallery figure {
+            background: #f8f9fa;
+            border: 1px dashed #ced4da;
+            border-radius: .5rem;
+            padding: .5rem;
+            text-align: center;
+        }
+
+        .gallery figcaption {
+            font-size: .8rem;
+            color: #6c757d;
+        }
+
+        /* Lightbox */
+        .gallery img {
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar flottante -->
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolios de Manuel LEITAO</a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Menu
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutMe.html">Qui suis-je ?</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="portfolioStage2024Veto.html">Stage Vetoquinol 2024</a>
+                        <a class="dropdown-item" href="portfolioALT2024-2025VTQ.html">Alternance Vetoquinol
+                            2024-2025</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container after-nav-bar">
+        <!-- INTRODUCTION -->
+        <section id="intro" class="mb-5">
+            <div class="d-flex justify-content-between align-items-center flex-wrap mb-2">
+                <h1 class="mb-0">Alternance 2024-2025 - Présentation</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-12 col-lg-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p class="mb-1"><strong>Entreprise</strong> : Vetoquinol</p>
+                                    <p class="mb-1"><strong>Service</strong> : DSI</p>
+                                    <p class="mb-0"><strong>Période</strong> : 1 septembre 2024 -> 31 août 2025</p>
+                                </div>
+                                <div class="col-sm-6">
+                                    <p class="mb-1"><strong>Rôle</strong> : Développeur / concepteur d'outils internes
+                                    </p>
+                                    <p class="mb-0"><strong>Environnement</strong> : Python (Flask), PHP 8/Symfony 6.4,
+                                        MSSQL/MySQL, Apache (httpd)/WinSW</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5>Objectifs transverses</h5>
+                    <ul>
+                        <li><strong>C1</strong> : livrer des apps fiables (APIs, portail) avec tests et documentation.
+                        </li>
+                        <li><strong>C2</strong> : améliorer les performances (temps d'exécution, robustesse) et la
+                            qualité.</li>
+                        <li><strong>C6</strong> : collaborer avec métiers/équipes (recette, priorisation, transferts).
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Navigation rapide</h5>
+                            <div class="d-grid gap-2">
+                                <a class="btn btn-outline-primary" href="#portfolio">Aller aux projets</a>
+                                <a class="btn btn-outline-primary" href="#sae">Voir la couverture des AC</a>
+                                <a class="btn btn-outline-primary" href="#bilan">Lire le bilan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPÉTENCES & AC ciblés -->
+        <section id="competences" class="mb-5">
+            <h2 class="mb-3">Compétences visées & AC ciblés</h2>
+            <p class="mb-2">Priorité donnée aux <strong>C1</strong> (développement), <strong>C2</strong> (optimisation)
+                et <strong>C6</strong> (collaboration). Les autres compétences sont mobilisées ponctuellement.</p>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">C1 - Réaliser un développement d'application</h6>
+                            <ul class="mb-0 small">
+                                <li>AC 1-4 : conception -> implémentation -> tests -> IU.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">C2 - Optimiser des applications</h6>
+                            <ul class="mb-0 small">
+                                <li>AC 1-3 : analyse, comparaison, formalisation algorithmique.</li>
+                                <li>AC 1-4 (sélection) : structures données, complexité, impacts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">C6 - Collaborer au sein d'une équipe</h6>
+                            <ul class="mb-0 small">
+                                <li>AC 1-4 : écosystème, rôles, communication, soft skills.</li>
+                                <li>AC 1-4 (manager) : veille, enjeux, conduite du changement.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6 class="text-muted mb-1">C3-C5 - Systèmes, Données, Projet</h6>
+                            <ul class="mb-0 small">
+                                <li><strong>C3</strong> : Apache/Windows Server, services, sécurité.</li>
+                                <li><strong>C4</strong> : SQL/MSSQL, schémas, qualité des données.</li>
+                                <li><strong>C5</strong> : recueil besoin, pilotage, communication.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- PORTFOLIO (TRACES) -->
+        <section id="portfolio" class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="mb-0">Projets majeurs (S6)</h2>
+                <div>
+                    <span class="badge bg-secondary">Contenu principal</span>
+                </div>
+            </div>
+
+            <!-- PROJET 1 -->
+            <div class="card mb-4" id="projet1">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>UPD V1 - Script Python de génération des rapports (sans API ni interface)</strong>
+                        <span class="ms-2 badge bg-dark">C1</span>
+                        <span class="ms-1 badge bg-dark">C2</span>
+                        <span class="ms-1 badge bg-dark">C6</span>
+                    </div>
+                    <div class="small text-muted">Période : 2024-2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">Livrer un <strong>script Python autonome</strong> pour
+                                produire les rapports réglementaires UPD à partir de sources Excel/CSV hétérogènes, avec
+                                un <strong>temps d'exécution réduit</strong> et des <strong>contrôles de
+                                    qualité</strong> intégrés. Aucune API Flask ni interface Symfony demandée sur cette
+                                V1.</p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Concevoir un pipeline fiable (lecture, nettoyage, règles métiers, export).</li>
+                                <li>Optimiser les performances (lecture/écriture, opérations vectorisées).</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>Implémentation <strong>Pandas</strong> : normalisation de colonnes, jointures,
+                                    détection de doublons/incohérences.</li>
+                                <li>Optimisations : indexation, vectorisation, réduction des allocations mémoire.</li>
+                                <li>Journalisation et messages d'erreur exploitables pour les utilisateurs métiers.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li>Génération reproductible et baisse d'erreurs manuelles.</li>
+                                <li>Temps d'exécution amélioré grâce aux optimisations Pandas/IO.</li>
+                            </ul>
+                            <h6>Savoirs (connaissances)</h6>
+                            <ul class="small">
+                                <li>Modèles de données tabulaires, formats Excel/CSV, validation.</li>
+                                <li>Principes d'algorithmique pour le traitement de données (complexité).</li>
+                            </ul>
+                            <h6>Savoir-faire (techniques)</h6>
+                            <ul class="small">
+                                <li>Écriture de pipelines Pandas performants (merge, groupby, apply -> vectorisation).
+                                </li>
+                                <li>Profiling/optimisation (mémoire, IO), export Excel fiable.</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h6 class="mb-2">Trace</h6>
+                                <div class="gallery">
+                                    <figure>
+                                        <img src="upd_v1_schema_relations.jpg"
+                                            alt="UPD V1 - Schéma de relation entre les données sources"
+                                            class="img-fluid" taille="100" />
+                                        <figcaption>Trace 1 - Schéma de relation des données (ordre de création,
+                                            dépendances, tables finales).</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="small text-muted mt-2 image-why" data-why-for="upd_v1_schema_relations.jpg">
+                                    <strong>À quoi sert cette image ?</strong>
+                                    <ul class="small mb-0">
+                                        <li><em>Visualiser le pipeline :</em> référentiels (espèces, pays, dose
+                                            factor…), données de ventes et correspondances -> produits intermédiaires
+                                            (<em>Produit maître</em>) -> <strong>Tableau final</strong>.</li>
+                                        <li><em>Valider l'ordre de création :</em> t_dbase_espèces_BIS/t_dbase_upd_BIS
+                                            -> Liste grouping Europe -> Ventes par grouping -> Produit maître -> Tableau
+                                            final,
+                                            pour éviter les erreurs de dépendances.</li>
+                                        <li><em>Justifier les jointures et contrôles :</em> où se font les merges,
+                                            dé-doublonnages et vérifications de complétude.</li>
+                                        <li><em>Onboarding rapide :</em> support aux revues avec les métiers pour
+                                            expliquer d'où viennent les champs du fichier final.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="alert alert-secondary small mt-3" role="alert">
+                                <strong>Entre-deux vers V2 (explorations hors périmètre)</strong> : prototypes
+                                personnels avec <em>Flask</em> (endpoints de test) et pistes d'interface
+                                <em>Symfony</em> pour préparer la V2. Ces travaux n'étaient <u>pas</u> demandés dans la
+                                V1.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 2 -->
+            <div class="card mb-4" id="projet2">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Portail UPD V2 - Web (PHP 8 / Symfony 6.4)</strong>
+                        <span class="ms-2 badge bg-dark">C1</span>
+                        <span class="ms-2 badge bg-dark">C2</span>
+                        <span class="ms-1 badge bg-dark">C6</span>
+                    </div>
+                    <div class="small text-muted">Période : 2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">Refonte du portail pour piloter la création des <a href="#"
+                                    class="term term-dataset" data-bs-toggle="modal"
+                                    data-bs-target="#modalDataset">datasets</a> et déclencher les traitements pour
+                                générer un fichier final qui contient les données de ventes en Europe ou Hors Europe
+                                pour les produits qui ont une authorisation de ventes sur le téritoire Européen.
+                                Avec une gestion des phases, <strong>upload multipart</strong>, appels à l'API Python,
+                                suivi
+                                d'avancement et administration de l'application.</p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Interface claire pour les métiers, fiabilisation des envois.</li>
+                                <li>Asynchronisme côté front et backend (files de messages) pour ne pas bloquer l'IHM.
+                                </li>
+                                <li>Autonomie des utilisateurs.</li>
+                                <li>Reproductibilité pour faciliter l'audit ou le vérification de données.</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>Intégration <code>HttpClient</code> (POST/DELETE), puis offloading via
+                                    <em>Symfony Messenger</em> (handlers, queues).
+                                </li>
+                                <li>Notifications d'état, relances, logs et gestion d'erreurs.</li>
+                                <li>Optimisations des requêtes SQL et pagination.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li>Le projet est toujours en cours de développement.</li>
+                                <li>Autonomie des métiers.</li>
+                                <li>Moins d'incidents (reprises automatiques, journalisation).</li>
+                            </ul>
+                            <h6>Savoirs (connaissances)</h6>
+                            <ul class="small">
+                                <li>Gestion d'états asynchrones, fonction avancer en Symfony,
+                                    fonction plus avancer en Flask.</li>
+                                <li>Qualité logicielle : validation pharmaceutique, sécurité applicative.</li>
+                            </ul>
+                            <h6>Savoir-faire (techniques)</h6>
+                            <ul class="small">
+                                <li>Contrôleurs/formulaires Symfony, <code>HttpClient</code>,
+                                    <em>Messenger/Handler</em>.
+                                </li>
+                                <li>Conception d'écrans UX pour le suivi de <a href="#" class="term term-dataset"
+                                        data-bs-toggle="modal" data-bs-target="#modalDataset">dataset</a>.</li>
+                                <li>Utilisation d'un WebSocket et de WebHook depuis l'API Flask</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h6 class="mb-2">Traces</h6>
+                                <div class="gallery">
+                                    <figure>
+                                        <img src="upd_v2_workflow_dataset.png"
+                                            alt="UPD V2 - Workflow de création d'un dataset" class="img-fluid"
+                                            taille="50" />
+                                        <figcaption>Trace 3 - Workflow dataset : rafraîchissement références ->
+                                            chargements sources -> compléments manuels -> consolidation -> préparation
+                                            Master Product.</figcaption>
+                                    </figure>
+                                    <figure>
+                                        <img src="upd_v2_architecture.png"
+                                            alt="UPD V2 - Architecture applicative (front, back, DWH)" class="img-fluid"
+                                            taille="100" />
+                                        <figcaption>Illustration 2 - Architecture : Front Symfony (RHEL) ↔ API Python
+                                            (Windows) ↔ DWH (MySQL/MSSQL) via HTTPS/API/SQL.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="small text-muted mt-2 image-why"
+                                    data-why-for="upd_v2_workflow_dataset.png,upd_v2_architecture.png">
+                                    <strong>À quoi
+                                        servent ces images ?</strong>
+                                    <ul class="small mb-0">
+                                        <li><em>Workflow
+                                                dataset :</em>
+                                            clarifie <strong>qui fait quoi</strong> et
+                                            <strong>quand</strong> (phases 1->4), distingue automatisé vs manuel,
+                                            matérialise les <em>gates qualité</em> et les décisions Oui/Non.
+                                        </li>
+                                        <li><em>Architecture
+                                                :</em> montre les
+                                            <strong>flux</strong> entre Front (upload
+                                            & suivi), API Python (traitements), et DWH (MySQL/MSSQL). Sert à discuter
+                                            <em>sécurité</em> (HTTPS, accès SQL), <em>environnements</em> (DEV/VAL/PROD)
+                                            et <em>scalabilité</em>.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 3 -->
+            <div class="card mb-4" id="projet3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Weasel - Finalisation d'une application interne</strong>
+                        <span class="ms-2 badge bg-dark">C1</span>
+                        <span class="ms-1 badge bg-dark">C2</span>
+                        <span class="ms-1 badge bg-dark">C6</span>
+                    </div>
+                    <div class="small text-muted">Période : 2024-2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">Le but est de finaliser le projet Weasel que j'ai fait durant
+                                mon stage de deuxième année de BUT (cf. <a href="portfolioStage2024Veto.html">Stage
+                                    Vetoquinol 2024</a> pour plus de détail). Je me suis occupé de la
+                                stabilisation de l'intégration et des corrections de bugs découvert lors de test
+                                utilisateurs.</p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Améliorer la qualité (tests, robustesse) et l'UX.</li>
+                                <li>Réduire la dette technique et documenter.</li>
+                                <li>Remettre une application au goût du jours.</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>Refactoring ciblé, correction de bugs critiques.</li>
+                                <li>Tests fonctionnels.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li>Moins d'incidents et <strong>meilleure maintenabilité</strong>.</li>
+                                <li>Adoption améliorée par les utilisateurs.</li>
+                            </ul>
+                            <h6>Savoirs (connaissances)</h6>
+                            <ul class="small">
+                                <li>Patrons de conception, revues, tests, gestion de qualité.</li>
+                                <li>Optimisation ciblée (requêtes, composants).</li>
+                                <li>Collaboration inter-équipes.</li>
+                            </ul>
+                            <h6>Savoir-faire (techniques)</h6>
+                            <ul class="small">
+                                <li>Refactoring, correction de bugs, mise en place de CI.</li>
+                                <li>Mesure de performance et re-design d'écrans critiques.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- PROJET 4 -->
+            <div class="card mb-4" id="projet4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Évaluation de plusieurs API Gateway & architecture d'intégration</strong>
+                        <span class="ms-2 badge bg-dark">C6</span>
+                        <span class="ms-1 badge bg-dark">C3</span>
+                    </div>
+                    <div class="small text-muted">Période : 2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">L'objectif est de faire une étude sur plusieurs API Gateway
+                                séléctionner pour sécuriser et
+                                gouverner les API internes (routage, authentification, rate-limit, observabilité).</p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Comparer les options et proposer une cible d'architecture.</li>
+                                <li>Mesurer l'impact sur les performances et la sécurité.</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>POC Kong Gateway : routes, plugins (auth, quotas), logs.</li>
+                                <li>POC Kong ApiMan : routes, plugins (auth, quotas), logs.</li>
+                                <li>POC Kong Gravitee.io : routes, plugins (auth, quotas), logs.</li>
+                                <li>Benchmarks de latence et documentation des patterns.</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li>Les POC non pas pu aller assez loin pour cause de priorité changeante.</li>
+                            </ul>
+                            <h6>Savoirs & savoir-faire mobilisés (C6/C3)</h6>
+                            <ul class="small">
+                                <li>Communication inter-équipes, rédaction de guides.</li>
+                                <li>Administration et sécurité des services.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 5 -->
+            <div class="card mb-4" id="projet5">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Hébergement d'APIs Python sur Windows Server (Apache httpd + Waitress + WinSW) &
+                            MSSQL Express</strong>
+                        <span class="ms-2 badge bg-dark">C3</span>
+                        <span class="ms-1 badge bg-dark">C1</span>
+                        <span class="ms-1 badge bg-dark">C6</span>
+                    </div>
+                    <div class="small text-muted">Période : 2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">Dans la periode d'entre deux entre UPD v1 et v2 j'ai mit en
+                                place un hébergement fiable sans Docker sous Windows Server pour héberger les script
+                                Python sous forme d'API Flask en utilisant :
+                                <strong>Apache (httpd)</strong> en reverse proxy vers <strong>Waitress</strong>, service
+                                Windows via <strong>WinSW</strong>, intégration <strong>MSSQL Express</strong>.
+                                L'objectif est de préparer des serveurs pour accueillir le futur UPD v2.
+                            </p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Disponibilité, redémarrage automatique, logs centralisés.</li>
+                                <li>Processus de déploiement reproductible (TortoiseSVN).</li>
+                                <li>Gestion des différentes API via un script PowerShell.</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>Configuration Apache (virtual hosts, proxy, certificats).</li>
+                                <li>Scripts de service WinSW, gestion des droits SQL.</li>
+                                <li>Création d'un script PowerShell utiliser pour faire des déploiement, start, stop,
+                                    restart, list.</li>
+                                <li>Installation d'un MSSQL Express pour les futur API Flask.</li>
+                            </ul>
+                            <p class="small text-muted">Exemple dans les Traces : <strong>workflow de
+                                    déploiement</strong> du
+                                code via TortoiseSVN puis redémarrage contrôlé du service.</p>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li><strong>Stabilité</strong> de l'hébergement et <strong>déploiements</strong>
+                                    prévisibles.</li>
+                                <li>Visibilité opérationnelle (journalisation, codes HTTP).</li>
+                            </ul>
+                            <h6>Savoirs (connaissances)</h6>
+                            <ul class="small">
+                                <li>Reverse proxy, SSL/TLS, sécurité applicative.</li>
+                                <li>Administration de services Windows et SQL Server.</li>
+                            </ul>
+                            <h6>Savoir-faire (techniques)</h6>
+                            <ul class="small">
+                                <li>Configuration httpd (<code>mod_proxy</code>, vhosts), scripts WinSW.</li>
+                                <li>Diagnostics de prod (logs, perf réseau), procédures de rollback.</li>
+                                <li>Utilisation de MSSQL Express</li>
+                                <li>Script de déploiement</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h6 class="mb-2">Exemple - Preuves (images)</h6>
+                                <div class="gallery">
+                                    <figure>
+                                        <img src="windows_deploiement_workflow.png"
+                                            alt="Workflow de déploiement sur Windows Server" class="img-fluid"
+                                            taille="50" />
+                                        <figcaption>Trace 5 - Workflow déploiement : sélection app -> vérifs dossier ->
+                                            checkout SVN -> swap atomique -> restart service.</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="small text-muted mt-2 image-why"
+                                    data-why-for="windows_deploiement_workflow.png">
+                                    <strong>À quoi sert cette image ?</strong>
+                                    <ul class="small mb-0">
+                                        <li><em>Sécuriser le déploiement :</em> vérifie l'existence du dépôt et prépare
+                                            un répertoire temporaire avant toute modification.</li>
+                                        <li><em>Limiter l'indisponibilité :</em> <strong>swap atomique</strong> du
+                                            contenu <code>www</code> pour réduire le downtime.</li>
+                                        <li><em>Prévoir le rollback :</em> branche explicite en cas d'échec du checkout
+                                            SVN (restauration de l'ancien contenu).
+                                        </li>
+                                        <li><em>Automatiser la remise en service :</em> redémarrage contrôlé du service
+                                            Windows (<em>WinSW</em>) et journalisation.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJET 6 -->
+            <div class="card mb-4" id="projet6">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>Automatisations n8n & scripts Python métiers</strong>
+                        <span class="ms-2 badge bg-dark">C2</span>
+                        <span class="ms-1 badge bg-dark">C4</span>
+                        <span class="ms-1 badge bg-dark">C6</span>
+                    </div>
+                    <div class="small text-muted">Période : 2025</div>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <h6>Contexte</h6>
+                            <p class="justified-text mb-2">Mise en place de <strong>workflows n8n</strong> et de scripts
+                                Python pour automatiser des tâches récurrentes (fichiers, notifications, intégrations).
+                            </p>
+                            <h6>Objectifs</h6>
+                            <ul>
+                                <li>Réduire les manipulations manuelles et sécuriser les flux.</li>
+                                <li>Standardiser les transformations de données.</li>
+                            </ul>
+                            <h6>Actions clés</h6>
+                            <ul>
+                                <li>Conception de workflows (déclencheurs, branches, erreurs).</li>
+                                <li>Scripts Python (lecture/écriture Excel, contrôles, envois).</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <h6>Résultats & Impact</h6>
+                            <ul>
+                                <li>Gains de temps significatifs et moins d'erreurs.</li>
+                                <li>Base de capitalisation (templates réutilisables).</li>
+                            </ul>
+                            <h6>Savoirs (connaissances)</h6>
+                            <ul class="small">
+                                <li>Patterns d'orchestration, gestion d'erreurs, sécurité des flux.</li>
+                                <li>Bonnes pratiques d'industrialisation de scripts.</li>
+                            </ul>
+                            <h6>Savoir-faire (techniques)</h6>
+                            <ul class="small">
+                                <li>Configuration n8n (noeuds, webhooks, retries).</li>
+                                <li>Développement de scripts robustes (logs, tests).</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h6 class="mb-2">Preuves (images)</h6>
+                                <div class="gallery">
+                                    <figure><img src="#" alt="Workflow n8n" class="img-fluid" taille="100" />
+                                        <figcaption>Trace 6 - Workflow n8n</figcaption>
+                                    </figure>
+                                    <figure><img src="#" alt="Template script" class="img-fluid" taille="100" />
+                                        <figcaption>Illustration 5 - Template de script</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- SAÉ (ILLUSTRATIONS) -->
+        <section id="sae" class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="mb-0">SAÉ - Couverture des AC</h2>
+                <div>
+                    <span class="badge bg-secondary">Tableau de couverture</span>
+                </div>
+            </div>
+
+            <p class="mb-3">Cartographie des AC vers les projets. Les liens renvoient aux sections correspondantes.</p>
+
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>Compétence / AC</th>
+                            <th>UPD API<br /><a href="#projet1">#P1</a></th>
+                            <th>Portail UPD V2<br /><a href="#projet2">#P2</a></th>
+                            <th>Weasel<br /><a href="#projet3">#P3</a></th>
+                            <th>API Gateway<br /><a href="#projet4">#P4</a></th>
+                            <th>Hosting Apache (httpd)/WinSW<br /><a href="#projet5">#P5</a></th>
+                            <th>n8n & Scripts<br /><a href="#projet6">#P6</a></th>
+                            <th>Commentaires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- C1 -->
+                        <tr>
+                            <td><strong>C1-AC1…AC4</strong></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td class="small">Dev d'API, Portail Symfony, tests & IU.</td>
+                        </tr>
+                        <!-- C2 -->
+                        <tr>
+                            <td><strong>C2-AC1…AC3</strong></td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td class="small">Optimisations de perfs, choix d'algorithmes, profiling.</td>
+                        </tr>
+                        <!-- C3 -->
+                        <tr>
+                            <td><strong>C3-AC1…AC3</strong></td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td class="small">Apache/Windows, sécurité, services, réseau.</td>
+                        </tr>
+                        <!-- C4 -->
+                        <tr>
+                            <td><strong>C4-AC1…AC4</strong></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td class="small">Modèles SQL, qualité, hétérogénéité des données.</td>
+                        </tr>
+                        <!-- C5 -->
+                        <tr>
+                            <td><strong>C5-AC1…AC4</strong></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>•</td>
+                            <td>✓</td>
+                            <td class="small">Recueil besoin, pilotage, communication.</td>
+                        </tr>
+                        <!-- C6 -->
+                        <tr>
+                            <td><strong>C6-AC1…AC4</strong></td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td class="small">Travail d'équipe, rôles, conduite du changement.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-secondary mt-4" role="alert">
+                <strong>Compléments :</strong> si un AC était insuffisamment couvert les années précédentes, il est
+                documenté via #P1/#P2/#P6 avec capture/CR en annexe.
+            </div>
+        </section>
+
+        <hr />
+
+        <!-- ABOUT / QUI SUIS-JE ? -->
+        <!-- BILAN & PERSPECTIVES -->
+        <section id="bilan" class="mb-5">
+            <h2>Bilan & perspectives</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6>Ce que j'ai solidifié</h6>
+                            <ul class="mb-0">
+                                <li><strong>Dev & API (C1)</strong> : structuration de services Flask/Symfony, tests,
+                                    qualité.</li>
+                                <li><strong>Optimisation (C2)</strong> : perfs Pandas/SQL, asynchronisme, files de
+                                    messages.</li>
+                                <li><strong>Collaboration (C6)</strong> : recueil besoin, revues, documentation,
+                                    transfert.</li>
+                                <li><strong>Systèmes (C3)</strong> : Apache (httpd)/WinSW/SQL Express en production
+                                    interne.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h6>Axes d'amélioration</h6>
+                            <ul class="mb-0">
+                                <li>Observabilité avancée (APM, métriques, tracing distribué).</li>
+                                <li>Tests E2E et contrats d'API automatisés.</li>
+                                <li>Hardening sécurité (headers, secrets, rotation certificats).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <h6>Prochaines étapes</h6>
+                <ul>
+                    <li>Industrialiser les workflows UPD (supervision, alerting, SLA).</li>
+                    <li>Généraliser Messenger/queues pour tous les traitements lourds.</li>
+                    <li>Mutualiser les gabarits n8n/scripts et la documentation utilisateur.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <section class="mb-3">
+                <a class="btn btn-primary btn-floating m-1" style="background-color:#0077b5"
+                    href="https://www.linkedin.com/" target="_blank" rel="noopener"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-dark btn-floating m-1" href="#" target="_blank" rel="noopener"><i
+                        class="fab fa-github"></i></a>
+                <a class="btn btn-danger btn-floating m-1" href="#intro"><i class="fas fa-arrow-up"></i></a>
+            </section>
+            <div class="text-center text-muted small">© 2025 - Manuel LEITAO - Portfolio S6 & SAÉ</div>
+        </div>
+        <!-- Glossaire : Modal Dataset -->
+        <div class="modal fade" id="modalDataset" tabindex="-1" aria-labelledby="modalDatasetLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalDatasetLabel">Définition - « Dataset » (contexte UPD)</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Dans ce projet, un <strong>dataset</strong> désigne l'<em>ensemble structuré</em> de
+                            fichiers sources (Excel/CSV, etc.) et métadonnées nécessaires à la génération d'un rapport
+                            UPD : fichiers mensuels, référentiels, règles de validation/qualité et paramètres
+                            d'extraction. L'intérets est de pouvoir lancer le traitement Europe ou Hors Europe avec une
+                            des identiques et reproductible.</p>
+                        <ul class="small">
+                            <li>Il est <em>préparé</em> côté portail (UPD V2) avant envoi au traitement.</li>
+                            <li>Il doit satisfaire des contraintes de schéma, d'unicité et de complétude.</li>
+                            <li>Le workflow de création de Dataset est dans les Traces de ce projet.</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox : Modal image pleine largeur -->
+        <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="lightboxTitle">Aperçu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="overflow:auto;">
+                        <div class="d-flex justify-content-center">
+                            <img id="lightboxImage" src="" alt="" class="" style="object-fit:contain;" />
+                        </div>
+                        <p id="lightboxCaption" class="mt-3 small text-muted w-100"></p>
+                        <div id="lightboxWhy" class="mt-2 w-100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="methodes.js"></script>
+    <script>
+        // Lightbox pour les images des galeries
+        (function () {
+            const modalEl = document.getElementById('lightboxModal');
+            const modal = modalEl ? new bootstrap.Modal(modalEl) : null;
+            const imgEl = document.getElementById('lightboxImage');
+            const captionEl = document.getElementById('lightboxCaption');
+            const titleEl = document.getElementById('lightboxTitle');
+            const whyEl = document.getElementById('lightboxWhy');
+
+            // Utilitaire: extrait le nom de fichier (sans chemin)
+            const basename = (src) => (src || '').split('/').pop();
+
+            // Cherche un bloc .image-why qui "couvre" ce fichier
+            function findWhyBlock(startNode, filename) {
+                let card = startNode.closest('.card');
+                if (card) {
+                    const local = card.querySelectorAll('.image-why');
+                    for (const el of local) {
+                        const list = (el.getAttribute('data-why-for') || '').split(',').map(s => s.trim());
+                        if (list.includes(filename)) return el;
+                    }
+                }
+                const all = document.querySelectorAll('.image-why');
+                for (const el of all) {
+                    const list = (el.getAttribute('data-why-for') || '').split(',').map(s => s.trim());
+                    if (list.includes(filename)) return el;
+                }
+                return null;
+            }
+
+            document.querySelectorAll('.gallery img').forEach(img => {
+                img.addEventListener('click', () => {
+                    if (!modal) return;
+
+                    const figure = img.closest('figure');
+                    const caption = (figure && figure.querySelector('figcaption'))
+                        ? figure.querySelector('figcaption').innerText
+                        : (img.alt || '');
+                    const file = basename(img.getAttribute('src'));
+                    const whyBlk = findWhyBlock(img, file);
+
+                    // Remplit la modale
+                    imgEl.src = img.getAttribute('src');
+                    imgEl.alt = img.alt || '';
+                    imgEl.classList = "img-fluid d-block mx-auto w-" + img.getAttribute('taille')
+                    captionEl.textContent = caption;
+                    titleEl.textContent = img.alt || 'Aperçu';
+
+                    // Insère le contenu "À quoi sert…" correspondant
+                    if (whyBlk) {
+                        whyEl.innerHTML = `
+            <div class="small text-muted">
+              ${whyBlk.innerHTML}
+            </div>`;
+                    } else {
+                        whyEl.innerHTML = ''; // aucun bloc pertinent
+                    }
+
+                    modal.show();
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
