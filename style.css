@@ -191,3 +191,11 @@ h5.pChange:hover li:not(:hover) {
 .ms-25p {
     margin-left: 25%;
 }
+
+.after-nav-bar {
+    padding-top: 8%;
+}
+
+.w-200 {
+    width: 200%;
+}
